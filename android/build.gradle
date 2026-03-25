@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.google.gms:google-services:4.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.22"
+    }
+}
+
+// Force specific dependency versions
+ext {
+    forceFirebaseMLVersion = '17.0.2'
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    
+    configurations.all {
+        resolutionStrategy {
+            force "com.google.firebase:firebase-ml-modeldownloader:${forceFirebaseMLVersion}"
+            force "com.google.firebase:firebase-ml-modeldownloader-ktx:${forceFirebaseMLVersion}"
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+gradle.projectsEvaluated {
+    rootProject.subprojects {
+        project ->
+            println "Configuring BuildConfig for: ${project.name}"
+            project.plugins.withId('com.android.library') {
+                android ->
+                    android.buildFeatures.buildConfig = true
+            }
+    }
+}
+
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+
+

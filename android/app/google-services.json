@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "392161688120",
+    "firebase_url": "https://adaptx-9d4e7-default-rtdb.firebaseio.com",
+    "project_id": "adaptx-9d4e7",
+    "storage_bucket": "adaptx-9d4e7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392161688120:android:56293bfa12991f8cc2c4cd",
+        "android_client_info": {
+          "package_name": "com.example.adapt2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392161688120-vpbjmg4qni1194mh6rfvmhop7smkgk5u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Coac8F4kpJz8O9L3V_1B2H1RzULWxl4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392161688120-vpbjmg4qni1194mh6rfvmhop7smkgk5u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
